@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Playfair Display";
+  src: url("/assets/fonts/PlayfairDisplay.woff2") format("woff2");
+  font-weight: 400 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("/assets/fonts/DMSans.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 1rem;
+
+    /* Luxury Beauty Palette — warm peach, rose gold, blush */
+    --background: 0.975 0.01 55;
+    --foreground: 0.22 0.025 345;
+    --card: 0.99 0.005 40;
+    --card-foreground: 0.22 0.025 345;
+    --popover: 0.99 0.005 40;
+    --popover-foreground: 0.22 0.025 345;
+
+    /* Primary: deep rose gold */
+    --primary: 0.52 0.14 15;
+    --primary-foreground: 0.99 0 0;
+
+    /* Secondary: soft blush */
+    --secondary: 0.93 0.04 20;
+    --secondary-foreground: 0.35 0.07 15;
+
+    /* Muted: warm cream */
+    --muted: 0.95 0.015 50;
+    --muted-foreground: 0.5 0.04 30;
+
+    /* Accent: warm gold */
+    --accent: 0.82 0.1 65;
+    --accent-foreground: 0.22 0.025 345;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    --border: 0.88 0.03 30;
+    --input: 0.88 0.03 30;
+    --ring: 0.52 0.14 15;
+
+    /* Chart */
+    --chart-1: 0.646 0.14 15;
+    --chart-2: 0.7 0.1 65;
+    --chart-3: 0.6 0.12 350;
+    --chart-4: 0.78 0.08 30;
+    --chart-5: 0.55 0.1 20;
+
+    /* Sidebar */
+    --sidebar: 0.975 0.01 55;
+    --sidebar-foreground: 0.22 0.025 345;
+    --sidebar-primary: 0.52 0.14 15;
+    --sidebar-primary-foreground: 0.99 0 0;
+    --sidebar-accent: 0.93 0.04 20;
+    --sidebar-accent-foreground: 0.35 0.07 15;
+    --sidebar-border: 0.88 0.03 30;
+    --sidebar-ring: 0.52 0.14 15;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "DM Sans", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: "Playfair Display", serif;
+  }
+}
+
+/* Gradient utilities */
+.glow-gradient {
+  background: linear-gradient(
+    135deg,
+    oklch(0.97 0.025 20) 0%,
+    oklch(0.95 0.04 35) 30%,
+    oklch(0.93 0.05 55) 60%,
+    oklch(0.97 0.02 15) 100%
+  );
+}
+
+.hero-gradient {
+  background: linear-gradient(
+    160deg,
+    oklch(0.98 0.02 30) 0%,
+    oklch(0.95 0.05 20) 25%,
+    oklch(0.92 0.07 35) 50%,
+    oklch(0.94 0.06 50) 75%,
+    oklch(0.96 0.04 15) 100%
+  );
+}
+
+.gold-text {
+  background: linear-gradient(
+    135deg,
+    oklch(0.72 0.12 55) 0%,
+    oklch(0.82 0.14 65) 50%,
+    oklch(0.68 0.1 45) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px oklch(0.52 0.14 15 / 0.15);
+}
